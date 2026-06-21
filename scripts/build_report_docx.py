@@ -90,6 +90,7 @@ def build_docx() -> Path:
     lines = REPORT_MD.read_text(encoding="utf-8").splitlines()
 
     i = 0
+    cover_mode = True
     in_code = False
     code_lines: list[str] = []
     paragraph_lines: list[str] = []
@@ -129,6 +130,8 @@ def build_docx() -> Path:
 
         if not stripped:
             flush_paragraph()
+            if cover_mode:
+                doc.add_paragraph()
             i += 1
             continue
 
@@ -147,17 +150,30 @@ def build_docx() -> Path:
             p = doc.add_paragraph()
             p.alignment = WD_ALIGN_PARAGRAPH.CENTER
             run = p.add_run(stripped[2:].strip())
-            set_run_font(run, size=22, bold=True)
+            size = 22 if "BÁO CÁO" in stripped.upper() else 13
+            set_run_font(run, size=size, bold=True)
             i += 1
             continue
         if stripped.startswith("## "):
             flush_paragraph()
-            doc.add_heading(stripped[3:].strip(), level=1)
+            if cover_mode:
+                p = doc.add_paragraph()
+                p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                run = p.add_run(stripped[3:].strip())
+                set_run_font(run, size=16, bold=True)
+            else:
+                doc.add_heading(stripped[3:].strip(), level=1)
             i += 1
             continue
         if stripped.startswith("### "):
             flush_paragraph()
-            doc.add_heading(stripped[4:].strip(), level=2)
+            if cover_mode:
+                p = doc.add_paragraph()
+                p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                run = p.add_run(stripped[4:].strip())
+                set_run_font(run, size=12, bold=True)
+            else:
+                doc.add_heading(stripped[4:].strip(), level=2)
             i += 1
             continue
         if stripped.startswith("- "):
@@ -167,6 +183,18 @@ def build_docx() -> Path:
             continue
         if stripped == "---":
             flush_paragraph()
+            if cover_mode:
+                doc.add_page_break()
+                cover_mode = False
+            i += 1
+            continue
+
+        if cover_mode:
+            flush_paragraph()
+            p = doc.add_paragraph()
+            p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            run = p.add_run(stripped)
+            set_run_font(run, size=12)
             i += 1
             continue
 
@@ -182,4 +210,3 @@ def build_docx() -> Path:
 if __name__ == "__main__":
     out = build_docx()
     print(out)
-

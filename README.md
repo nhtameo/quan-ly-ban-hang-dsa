@@ -2,6 +2,11 @@
 
 Bài tập lớn môn Cấu trúc dữ liệu và Giải thuật, chủ đề 4: Quản lý bán hàng.
 
+Nhóm thực hiện: Nhóm 15
+
+- Nguyễn Trịnh Mai Phương - 202418965: thiết kế chương trình, thiết kế dữ liệu, cài đặt luồng đọc/ghi dữ liệu, viết báo cáo.
+- Trần Minh Quân - 202418973: kiểm thử, cài đặt/kịch bản test, chuẩn bị dữ liệu demo, viết báo cáo, hỗ trợ đóng gói và GitHub.
+
 ## Nội dung chính
 
 - Quản lý sản phẩm: thêm, sửa/xóa qua menu, tìm kiếm theo mã/tên/loại, sắp xếp theo mã, tên, giá, tồn kho.

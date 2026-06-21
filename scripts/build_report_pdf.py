@@ -89,6 +89,34 @@ def make_styles(font_name: str, bold_name: str):
             spaceBefore=4,
             spaceAfter=6,
         ),
+        "cover_line": ParagraphStyle(
+            "CoverLine",
+            parent=base["BodyText"],
+            fontName=font_name,
+            fontSize=12,
+            leading=16,
+            alignment=TA_CENTER,
+            spaceAfter=4,
+        ),
+        "cover_bold": ParagraphStyle(
+            "CoverBold",
+            parent=base["BodyText"],
+            fontName=bold_name,
+            fontSize=13,
+            leading=17,
+            alignment=TA_CENTER,
+            spaceAfter=4,
+        ),
+        "cover_title": ParagraphStyle(
+            "CoverTitle",
+            parent=base["Title"],
+            fontName=bold_name,
+            fontSize=21,
+            leading=26,
+            alignment=TA_CENTER,
+            spaceBefore=16,
+            spaceAfter=10,
+        ),
     }
     return styles
 
@@ -107,7 +135,8 @@ def add_table(story, rows: list[list[str]], styles) -> None:
     data = []
     for row in rows:
         data.append([Paragraph(escape(cell), styles["body"]) for cell in row])
-    table = Table(data, repeatRows=1)
+    available_width = 6.5 * inch
+    table = Table(data, colWidths=[available_width / len(rows[0])] * len(rows[0]), repeatRows=1)
     table.setStyle(
         TableStyle(
             [
@@ -139,6 +168,7 @@ def build_pdf() -> Path:
     lines = REPORT_MD.read_text(encoding="utf-8").splitlines()
     story = []
     in_code = False
+    cover_mode = True
     code_lines: list[str] = []
     paragraph_lines: list[str] = []
     i = 0
@@ -173,6 +203,8 @@ def build_pdf() -> Path:
             continue
         if not stripped:
             flush_paragraph()
+            if cover_mode:
+                story.append(Spacer(1, 8))
             i += 1
             continue
         if stripped.startswith("|") and i + 1 < len(lines) and lines[i + 1].strip().startswith("| ---"):
@@ -186,18 +218,26 @@ def build_pdf() -> Path:
             continue
         if stripped.startswith("# "):
             flush_paragraph()
-            story.append(Paragraph(escape(stripped[2:].strip()), styles["title"]))
-            continue_index = i + 1
-            i = continue_index
+            style = styles["cover_title"] if cover_mode and "BÁO CÁO" in stripped.upper() else (
+                styles["cover_bold"] if cover_mode else styles["title"]
+            )
+            story.append(Paragraph(escape(stripped[2:].strip()), style))
+            i += 1
             continue
         if stripped.startswith("## "):
             flush_paragraph()
-            story.append(Paragraph(escape(stripped[3:].strip()), styles["h1"]))
+            if cover_mode:
+                story.append(Paragraph(escape(stripped[3:].strip()), styles["cover_bold"]))
+            else:
+                story.append(Paragraph(escape(stripped[3:].strip()), styles["h1"]))
             i += 1
             continue
         if stripped.startswith("### "):
             flush_paragraph()
-            story.append(Paragraph(escape(stripped[4:].strip()), styles["h2"]))
+            if cover_mode:
+                story.append(Paragraph(escape(stripped[4:].strip()), styles["cover_line"]))
+            else:
+                story.append(Paragraph(escape(stripped[4:].strip()), styles["h2"]))
             i += 1
             continue
         if stripped.startswith("- "):
@@ -208,6 +248,12 @@ def build_pdf() -> Path:
         if stripped == "---":
             flush_paragraph()
             story.append(PageBreak())
+            cover_mode = False
+            i += 1
+            continue
+        if cover_mode:
+            flush_paragraph()
+            story.append(Paragraph(escape(stripped), styles["cover_line"]))
             i += 1
             continue
         paragraph_lines.append(line)
