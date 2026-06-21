@@ -1,0 +1,5 @@
+customer_id|name|phone|address
+KH001|Nguyen Van An|0901000001|Cau Giay, Ha Noi
+KH002|Tran Thi Binh|0901000002|Hai Ba Trung, Ha Noi
+KH003|Le Minh Chau|0901000003|Thanh Xuan, Ha Noi
+KH004|Pham Quoc Dung|0901000004|Hoan Kiem, Ha Noi

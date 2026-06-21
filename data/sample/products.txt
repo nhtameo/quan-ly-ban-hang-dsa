@@ -1,0 +1,9 @@
+sku|name|unit|category|price|stock|min_stock
+SP001|Dien thoai Alpha A1|chiec|Dien thoai|4990000|35|5
+SP002|Dien thoai Beta B2|chiec|Dien thoai|7990000|20|4
+SP003|Laptop OfficeBook 14|chiec|Laptop|13490000|12|3
+SP004|Laptop GamePro 15|chiec|Laptop|22490000|7|2
+SP005|Chuot khong day M20|chiec|Phu kien|199000|150|20
+SP006|Ban phim co K87|chiec|Phu kien|799000|48|10
+SP007|Tai nghe H100|chiec|Phu kien|399000|80|15
+SP008|May in Laser L200|chiec|Thiet bi van phong|2990000|9|2

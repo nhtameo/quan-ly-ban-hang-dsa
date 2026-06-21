@@ -1,0 +1,1 @@
+invoice_id|customer_id|customer_name|created_at|discount_percent|vat_percent|subtotal|vat_amount|total
