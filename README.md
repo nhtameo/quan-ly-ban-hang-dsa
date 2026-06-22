@@ -69,7 +69,6 @@ sales_manager/
 data/sample/          # dữ liệu mẫu ban đầu
 tests/                # unit test
 report/               # báo cáo Word/PDF/Markdown
-scripts/              # build báo cáo và zip bàn giao
 ```
 
 ## File dữ liệu

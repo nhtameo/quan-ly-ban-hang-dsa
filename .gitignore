@@ -5,4 +5,4 @@ data/demo/
 output/*.txt
 release/
 tmp/
-
+scripts/

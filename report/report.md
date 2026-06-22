@@ -1,6 +1,5 @@
-# ĐẠI HỌC BÁCH KHOA HÀ NỘI
+# TRƯỜNG ĐẠI HỌC BÁCH KHOA HÀ NỘI
 # TRƯỜNG CÔNG NGHỆ THÔNG TIN VÀ TRUYỀN THÔNG
-# KHOA KHOA HỌC MÁY TÍNH
 
 
 # BÁO CÁO BÀI TẬP LỚN
@@ -26,33 +25,53 @@ Hà Nội, tháng 06 năm 2026
 
 ---
 
-## MỤC LỤC
+## LỜI CẢM ƠN
 
-- Thông tin đề tài và phân công nhóm.
-- Tổng quan bài toán.
-- Phân tích yêu cầu.
-- Thiết kế dữ liệu lưu trữ.
-- Thiết kế cấu trúc dữ liệu và thuật toán.
-- Thiết kế chương trình.
-- Cài đặt chức năng chính.
-- Kiểm thử và đánh giá kết quả.
-- Hướng dẫn chạy chương trình.
-- Kết luận và hướng phát triển.
-- Phụ lục mã nguồn tiêu biểu.
+Nhóm 15 xin gửi lời cảm ơn tới giảng viên hướng dẫn đã cung cấp danh sách chủ đề, yêu cầu chung và định hướng thực hiện bài tập lớn học phần Cấu trúc dữ liệu và Giải thuật. Trong quá trình thực hiện đề tài, nhóm đã vận dụng kiến thức về mảng động, danh sách liên kết, bảng băm, tìm kiếm, sắp xếp và tổ chức chương trình theo module. Báo cáo này trình bày kết quả xây dựng hệ thống quản lý bán hàng đơn giản, có dữ liệu file text, chương trình chạy được, kiểm thử và hướng dẫn sử dụng.
 
-## DANH MỤC TỪ VIẾT TẮT
+## TÓM TẮT NỘI DUNG
 
-| Từ viết tắt | Ý nghĩa |
-| --- | --- |
-| CTDL | Cấu trúc dữ liệu |
-| GT | Giải thuật |
-| SKU | Stock Keeping Unit - mã sản phẩm |
-| VAT | Thuế giá trị gia tăng |
-| CLI | Command Line Interface - giao diện dòng lệnh |
+Đề tài xây dựng chương trình quản lý bán hàng bằng Python theo yêu cầu học phần Cấu trúc dữ liệu và Giải thuật. Chương trình hỗ trợ quản lý sản phẩm, quản lý khách hàng, lập hóa đơn bán hàng, tính chiết khấu, thuế VAT, tổng tiền thanh toán, tự động giảm tồn kho sau khi bán và lập báo cáo doanh thu. Dữ liệu được lưu trong các file text có cấu trúc, gồm `products.txt`, `customers.txt`, `invoices.txt` và `invoice_items.txt`. Các cấu trúc dữ liệu như `DynamicArray`, `LinkedList`, `HashTable`, thuật toán tìm kiếm tuyến tính và quick sort được nhóm tự cài đặt để phục vụ nghiệp vụ. Chương trình có menu console, dữ liệu mẫu, ảnh minh họa file dữ liệu, ảnh minh họa từng bước chạy và bộ kiểm thử tự động.
 
 ---
 
-## 1. THÔNG TIN ĐỀ TÀI VÀ PHÂN CÔNG NHÓM
+## MỤC LỤC
+
+- Lời cảm ơn.
+- Tóm tắt nội dung.
+- Danh mục hình vẽ.
+- Danh mục bảng biểu.
+- Chương 1. Tổng quan và phân tích yêu cầu.
+- Chương 2. Thiết kế dữ liệu và cấu trúc dữ liệu.
+- Chương 3. Thiết kế và cài đặt chương trình.
+- Chương 4. Kiểm thử, hướng dẫn sử dụng và GitHub.
+- Kết luận.
+- Tài liệu tham khảo.
+- Phụ lục.
+
+## DANH MỤC HÌNH VẼ
+
+- Hình 2.1. Minh họa file `products.txt`.
+- Hình 2.2. Minh họa file `customers.txt`.
+- Hình 2.3. Minh họa file `invoices.txt` sau khi tạo dữ liệu demo.
+- Hình 2.4. Minh họa file `invoice_items.txt` sau khi tạo dữ liệu demo.
+- Hình 4.1. Mở menu chương trình.
+- Hình 4.2. Tạo dữ liệu demo.
+- Hình 4.3. Xem tổng quan dữ liệu.
+- Hình 4.4. Chạy kiểm thử tự động.
+
+## DANH MỤC BẢNG BIỂU
+
+- Bảng 1.1. Phân công công việc nhóm 15.
+- Bảng 2.1. Mô tả dữ liệu đầu vào file sản phẩm.
+- Bảng 2.2. Mô tả dữ liệu đầu vào file khách hàng.
+- Bảng 2.3. Mô tả dữ liệu đầu vào file hóa đơn.
+- Bảng 2.4. Độ phức tạp cấu trúc dữ liệu và thuật toán.
+- Bảng 4.1. Test case kiểm thử chương trình.
+
+---
+
+## CHƯƠNG 1. TỔNG QUAN VÀ PHÂN TÍCH YÊU CẦU
 
 ### 1.1. Thông tin đề tài
 
@@ -61,9 +80,11 @@ Chủ đề trong danh sách project: Chủ đề 4 - Quản lý bán hàng.
 Ngôn ngữ lập trình: Python.  
 Kiểu giao diện: Menu console.  
 Hình thức lưu trữ: File text có cấu trúc.  
-Link GitHub: https://github.com/nhtameo/quan-ly-ban-hang-dsa.
+Repository GitHub: https://github.com/nhtameo/quan-ly-ban-hang-dsa.
 
 ### 1.2. Thành viên và phân công
+
+Bảng 1.1. Phân công công việc nhóm 15
 
 | STT | Họ tên | MSSV | Vai trò chính |
 | --- | --- | --- | --- |
@@ -73,306 +94,192 @@ Link GitHub: https://github.com/nhtameo/quan-ly-ban-hang-dsa.
 Phân công chi tiết:
 
 - Nguyễn Trịnh Mai Phương: nhóm trưởng; phân tích yêu cầu; thiết kế chương trình; thiết kế cấu trúc dữ liệu lưu trữ; cài đặt luồng đọc/ghi dữ liệu; viết các phần tổng quan, phân tích, thiết kế trong báo cáo; rà soát định dạng báo cáo Word/PDF.
-- Trần Minh Quân: cài đặt và kiểm thử cấu trúc dữ liệu; xây dựng kịch bản test; kiểm thử chức năng lập hóa đơn, báo cáo, lưu file; chuẩn bị dữ liệu demo; viết phần kiểm thử, đánh giá, hướng dẫn chạy; hỗ trợ đóng gói zip và đưa mã nguồn lên GitHub.
+- Trần Minh Quân: cài đặt và kiểm thử cấu trúc dữ liệu; xây dựng kịch bản test; kiểm thử chức năng lập hóa đơn, báo cáo, lưu file; chuẩn bị dữ liệu demo; viết phần kiểm thử, đánh giá, hướng dẫn chạy; hỗ trợ đóng gói và đưa mã nguồn lên GitHub.
 
 Tỷ lệ đóng góp được chia cân bằng. Mai Phương phụ trách trọng tâm phần thiết kế và dữ liệu, Minh Quân phụ trách trọng tâm phần kiểm thử và đánh giá; cả hai cùng tham gia viết báo cáo và hoàn thiện sản phẩm bàn giao.
 
-### 1.3. Sản phẩm bàn giao
+### 1.3. Bối cảnh bài toán
 
-- Thư mục mã nguồn `sales_manager`.
-- Dữ liệu mẫu trong `data/sample`.
-- Báo cáo Word `report/report.docx`.
-- Báo cáo PDF `report/report.pdf`.
-- Outline slide `report/slide-outline.md`.
-- File nén bàn giao `release/QuanLyBanHang_DSA.zip`.
-- Repository GitHub công khai: https://github.com/nhtameo/quan-ly-ban-hang-dsa.
+Trong hoạt động bán hàng, cửa hàng cần quản lý danh mục sản phẩm, thông tin khách hàng, hóa đơn và doanh thu. Nếu quản lý bằng sổ hoặc bảng tính đơn giản, dữ liệu dễ bị sai lệch: tồn kho không cập nhật kịp thời, hóa đơn thiếu chi tiết, doanh thu khó tổng hợp và khó xác định mặt hàng bán chạy. Vì vậy cần một chương trình nhỏ giúp quản lý các nghiệp vụ bán hàng cơ bản.
 
-## 2. TỔNG QUAN BÀI TOÁN
+### 1.4. Mục tiêu
 
-### 2.1. Bối cảnh
+Mục tiêu của đề tài:
 
-Trong hoạt động bán lẻ, cửa hàng cần quản lý danh mục sản phẩm, thông tin khách hàng, các hóa đơn bán hàng và báo cáo doanh thu. Nếu quản lý thủ công bằng sổ hoặc bảng tính, dữ liệu dễ bị sai lệch: tồn kho không được cập nhật kịp thời, hóa đơn thiếu chi tiết, doanh thu khó tổng hợp theo ngày/tháng và khó xác định mặt hàng bán chạy.
+- Xây dựng chương trình có menu để người dùng lựa chọn tác vụ.
+- Lưu dữ liệu vào file text theo đúng yêu cầu học phần.
+- Quản lý được sản phẩm, khách hàng, hóa đơn và chi tiết hóa đơn.
+- Tính được chiết khấu, VAT và tổng tiền thanh toán.
+- Cập nhật tồn kho sau khi bán.
+- Thống kê doanh thu theo ngày/tháng và top sản phẩm bán chạy.
+- Tự cài đặt cấu trúc dữ liệu và thuật toán, không phụ thuộc vào cơ sở dữ liệu.
 
-Đề tài xây dựng một chương trình quản lý bán hàng ở mức cơ bản nhưng có đầy đủ các nghiệp vụ chính: quản lý sản phẩm, quản lý khách hàng, lập hóa đơn, lưu hóa đơn và chi tiết hóa đơn, tính chiết khấu/VAT/tổng tiền, thống kê doanh thu và top sản phẩm bán chạy.
+### 1.5. Yêu cầu chức năng
 
-### 2.2. Mục tiêu
+Các chức năng chính:
 
-Chương trình hướng tới các mục tiêu sau:
+- Quản lý sản phẩm: xem danh sách, thêm, cập nhật/xóa ở lớp nghiệp vụ, tìm kiếm, sắp xếp, cảnh báo sắp hết hàng.
+- Quản lý khách hàng: xem danh sách, thêm, cập nhật/xóa ở lớp nghiệp vụ, tìm kiếm theo mã/tên/số điện thoại.
+- Lập hóa đơn: chọn khách hàng, nhập nhiều sản phẩm, kiểm tra tồn kho, tính tạm tính, chiết khấu, VAT, tổng tiền.
+- Lưu hóa đơn master-detail: đầu hóa đơn lưu ở `invoices.txt`, chi tiết hóa đơn lưu ở `invoice_items.txt`.
+- Báo cáo: doanh thu theo ngày/tháng, top 10 sản phẩm bán chạy, sản phẩm sắp hết hàng.
 
-- Cung cấp menu đơn giản để người dùng thao tác liên tục cho đến khi chọn thoát.
-- Lưu trữ dữ liệu trong file text, đúng yêu cầu học phần.
-- Không sử dụng cơ sở dữ liệu hay cấu trúc dữ liệu nâng cao có sẵn cho phần nghiệp vụ.
-- Tự cài đặt và vận dụng các cấu trúc dữ liệu: mảng động, danh sách liên kết, bảng băm.
-- Tự cài đặt thuật toán tìm kiếm và sắp xếp.
-- Bảo đảm nghiệp vụ bán hàng không làm tồn kho âm.
-- Có kiểm thử tự động để chứng minh các luồng chính hoạt động đúng.
+### 1.6. Yêu cầu phi chức năng
 
-### 2.3. Phạm vi
+- Chạy được bằng Python trên máy cá nhân.
+- Không cần cài đặt cơ sở dữ liệu.
+- Dữ liệu được lưu lại sau khi thoát chương trình.
+- Mã nguồn tách module rõ ràng.
+- Có dữ liệu mẫu và kiểm thử tự động.
+- Báo cáo trình bày theo bố cục tham khảo mẫu đồ án của Đại học Bách khoa Hà Nội.
 
-Phạm vi đã cài đặt:
+---
 
-- Quản lý danh mục sản phẩm.
-- Quản lý danh sách khách hàng.
-- Lập hóa đơn bán hàng nhiều dòng.
-- Tự động giảm tồn kho sau khi lập hóa đơn.
-- Lưu hóa đơn theo mô hình master-detail.
-- Báo cáo doanh thu theo ngày/tháng.
-- Thống kê top 10 sản phẩm bán chạy.
-- Liệt kê sản phẩm sắp hết hàng.
-- Xuất báo cáo text.
+## CHƯƠNG 2. THIẾT KẾ DỮ LIỆU VÀ CẤU TRÚC DỮ LIỆU
 
-Phạm vi chưa cài đặt:
+### 2.1. Tổ chức file dữ liệu
 
-- Phân quyền người dùng.
-- Giao diện đồ họa.
-- Quản lý nhập kho riêng biệt.
-- In từng hóa đơn ra PDF riêng.
+Chương trình sử dụng dữ liệu đầu vào dạng file text. Mỗi file có một dòng tiêu đề và các dòng dữ liệu. Các trường được phân tách bằng ký tự `|`. Cách lưu này giúp dễ đọc bằng mắt thường, dễ kiểm tra, đồng thời vẫn đủ rõ ràng để chương trình phân tích thành các đối tượng dữ liệu.
 
-## 3. PHÂN TÍCH YÊU CẦU
+Các file dữ liệu chính:
 
-### 3.1. Yêu cầu chức năng
+- `products.txt`: danh mục sản phẩm.
+- `customers.txt`: danh sách khách hàng.
+- `invoices.txt`: đầu hóa đơn.
+- `invoice_items.txt`: chi tiết hóa đơn.
 
-#### 3.1.1. Quản lý sản phẩm
+### 2.2. Dữ liệu đầu vào file sản phẩm
 
-Mỗi sản phẩm gồm:
+Bảng 2.1. Mô tả dữ liệu đầu vào file sản phẩm
 
-- Mã sản phẩm.
-- Tên sản phẩm.
-- Đơn vị tính.
-- Loại sản phẩm.
-- Đơn giá bán.
-- Số lượng tồn kho.
-- Ngưỡng tồn kho tối thiểu.
+| Trường | Kiểu dữ liệu | Ý nghĩa | Ví dụ |
+| --- | --- | --- | --- |
+| `sku` | Chuỗi | Mã sản phẩm, dùng làm khóa tra cứu | SP001 |
+| `name` | Chuỗi | Tên sản phẩm | Dien thoai Alpha A1 |
+| `unit` | Chuỗi | Đơn vị tính | chiec |
+| `category` | Chuỗi | Loại sản phẩm | Dien thoai |
+| `price` | Số nguyên | Đơn giá bán | 4990000 |
+| `stock` | Số nguyên | Số lượng tồn kho hiện tại | 35 |
+| `min_stock` | Số nguyên | Ngưỡng tồn kho tối thiểu để cảnh báo | 5 |
 
-Các chức năng:
+![Hình 2.1. Minh họa file products.txt](report/assets/data_products.png)
 
-- Xem danh sách sản phẩm.
-- Thêm sản phẩm mới.
-- Cập nhật sản phẩm ở lớp nghiệp vụ.
-- Xóa sản phẩm ở lớp nghiệp vụ.
-- Tìm kiếm sản phẩm theo mã, tên hoặc loại.
-- Sắp xếp sản phẩm theo mã, tên, giá hoặc tồn kho.
-- Liệt kê sản phẩm sắp hết hàng.
+Chú thích: File `products.txt` là dữ liệu đầu vào quan trọng nhất của chương trình. Mỗi dòng sau header tương ứng một sản phẩm. Trường `stock` được chương trình cập nhật giảm sau khi lập hóa đơn thành công.
 
-#### 3.1.2. Quản lý khách hàng
+### 2.3. Dữ liệu đầu vào file khách hàng
 
-Mỗi khách hàng gồm:
+Bảng 2.2. Mô tả dữ liệu đầu vào file khách hàng
 
-- Mã khách hàng.
-- Họ tên.
-- Số điện thoại.
-- Địa chỉ.
+| Trường | Kiểu dữ liệu | Ý nghĩa | Ví dụ |
+| --- | --- | --- | --- |
+| `customer_id` | Chuỗi | Mã khách hàng, dùng làm khóa tra cứu | KH001 |
+| `name` | Chuỗi | Họ tên khách hàng | Nguyen Van An |
+| `phone` | Chuỗi | Số điện thoại | 0901000001 |
+| `address` | Chuỗi | Địa chỉ liên hệ | Cau Giay, Ha Noi |
 
-Các chức năng:
+![Hình 2.2. Minh họa file customers.txt](report/assets/data_customers.png)
 
-- Xem danh sách khách hàng.
-- Thêm khách hàng mới.
-- Cập nhật khách hàng ở lớp nghiệp vụ.
-- Xóa khách hàng nếu chưa có hóa đơn.
-- Tìm kiếm khách hàng theo mã, tên hoặc số điện thoại.
+Chú thích: File `customers.txt` cung cấp dữ liệu khách hàng ban đầu. Khi lập hóa đơn, chương trình tra cứu khách hàng bằng `customer_id`.
 
-#### 3.1.3. Lập hóa đơn
+### 2.4. Dữ liệu đầu ra và đầu vào tiếp theo của hóa đơn
 
-Hóa đơn bán hàng cần hỗ trợ:
+Sau khi người dùng lập hóa đơn, chương trình ghi dữ liệu vào `invoices.txt` và `invoice_items.txt`. Các file này đồng thời là dữ liệu đầu vào cho những lần chạy sau, vì chương trình sẽ nạp lại hóa đơn cũ để tính doanh thu, top sản phẩm bán chạy và sinh mã hóa đơn tiếp theo.
 
-- Chọn khách hàng theo mã.
-- Nhập nhiều sản phẩm trong cùng một hóa đơn.
-- Kiểm tra mã sản phẩm tồn tại.
-- Kiểm tra số lượng tồn kho trước khi bán.
-- Tính tạm tính, chiết khấu, VAT và tổng thanh toán.
-- Tạo mã hóa đơn tự động.
-- Lưu phần đầu hóa đơn và chi tiết hóa đơn.
-- Giảm tồn kho sản phẩm sau khi bán thành công.
+Bảng 2.3. Mô tả dữ liệu đầu vào/đầu ra của hóa đơn
 
-#### 3.1.4. Báo cáo
-
-Các báo cáo cần có:
-
-- Tổng quan dữ liệu: số sản phẩm, số khách hàng, số hóa đơn, doanh thu.
-- Doanh thu theo ngày.
-- Doanh thu theo tháng.
-- Top 10 sản phẩm bán chạy nhất.
-- Sản phẩm có tồn kho nhỏ hơn hoặc bằng ngưỡng tối thiểu.
-
-### 3.2. Yêu cầu phi chức năng
-
-- Dễ chạy trên máy cá nhân: chỉ cần Python, không cần cài thêm thư viện để chạy chương trình chính.
-- Dữ liệu lưu được sau khi tắt chương trình.
-- Mã nguồn tách module rõ ràng, dễ đọc, dễ kiểm thử.
-- Có dữ liệu mẫu để người chấm chạy nhanh.
-- Có test tự động.
-- Báo cáo trình bày theo bố cục đồ án: bìa, mục lục, phân công, phân tích, thiết kế, cài đặt, kiểm thử, kết luận, phụ lục.
-
-## 4. THIẾT KẾ DỮ LIỆU LƯU TRỮ
-
-### 4.1. Nguyên tắc thiết kế
-
-Theo yêu cầu học phần, dữ liệu được lưu trong file text. Mỗi file gồm một dòng tiêu đề và nhiều dòng bản ghi. Các trường trong một bản ghi được phân tách bằng ký tự `|`. Cách tổ chức này đủ đơn giản để đọc/ghi thủ công, đồng thời vẫn thể hiện rõ cấu trúc dữ liệu.
-
-Chương trình sử dụng 4 file chính:
-
-- `products.txt`: lưu danh mục sản phẩm.
-- `customers.txt`: lưu danh sách khách hàng.
-- `invoices.txt`: lưu đầu hóa đơn.
-- `invoice_items.txt`: lưu chi tiết hóa đơn.
-
-### 4.2. File sản phẩm
-
-Tên file: `data/sample/products.txt`
-
-```text
-sku|name|unit|category|price|stock|min_stock
-SP001|Dien thoai Alpha A1|chiec|Dien thoai|4990000|35|5
-```
-
-Ý nghĩa:
-
-- `sku`: mã sản phẩm, khóa logic của sản phẩm.
-- `name`: tên sản phẩm.
-- `unit`: đơn vị tính.
-- `category`: loại sản phẩm.
-- `price`: đơn giá bán.
-- `stock`: số lượng tồn kho.
-- `min_stock`: ngưỡng tồn kho tối thiểu để cảnh báo.
-
-### 4.3. File khách hàng
-
-Tên file: `data/sample/customers.txt`
-
-```text
-customer_id|name|phone|address
-KH001|Nguyen Van An|0901000001|Cau Giay, Ha Noi
-```
-
-### 4.4. File hóa đơn
-
-Tên file: `data/sample/invoices.txt`
-
-```text
-invoice_id|customer_id|customer_name|created_at|discount_percent|vat_percent|subtotal|vat_amount|total
-HD0001|KH001|Nguyen Van An|2026-06-22 00:00:00|2.00|8.00|5388000|422419|5810419
-```
-
-### 4.5. File chi tiết hóa đơn
-
-Tên file: `data/sample/invoice_items.txt`
-
-```text
-invoice_id|sku|product_name|quantity|unit_price|line_total
-HD0001|SP001|Dien thoai Alpha A1|1|4990000|4990000
-```
-
-### 4.6. Mô hình master-detail
-
-Hóa đơn được thiết kế theo mô hình master-detail:
-
-- Master: `Invoice` trong file `invoices.txt`.
-- Detail: `InvoiceItem` trong file `invoice_items.txt`.
-- Một hóa đơn có thể có nhiều dòng chi tiết.
-- Mỗi dòng chi tiết thuộc đúng một hóa đơn thông qua `invoice_id`.
-
-Thiết kế này giúp lưu được đầy đủ lịch sử bán hàng. Tên sản phẩm và đơn giá được ghi vào chi tiết hóa đơn tại thời điểm bán, vì vậy hóa đơn cũ không bị thay đổi nếu sau này cập nhật tên hoặc giá sản phẩm trong danh mục.
-
-## 5. THIẾT KẾ CẤU TRÚC DỮ LIỆU VÀ THUẬT TOÁN
-
-### 5.1. Mảng động `DynamicArray`
-
-`DynamicArray` được cài đặt trong `sales_manager/data_structures.py`. Đây là cấu trúc dữ liệu chính để lưu các danh sách nghiệp vụ.
-
-Vai trò:
-
-- Lưu danh sách sản phẩm.
-- Lưu danh sách khách hàng.
-- Lưu danh sách hóa đơn.
-- Lưu danh sách chi tiết hóa đơn.
-- Lưu kết quả tìm kiếm và kết quả báo cáo.
-
-Các thao tác:
-
-| Thao tác | Ý nghĩa | Độ phức tạp |
+| File | Trường chính | Ý nghĩa |
 | --- | --- | --- |
-| `append` | Thêm cuối mảng | O(1) trung bình |
-| `get` | Truy cập theo chỉ số | O(1) |
-| `set` | Cập nhật theo chỉ số | O(1) |
-| `insert` | Chèn vào vị trí bất kỳ | O(n) |
-| `remove_at` | Xóa theo vị trí | O(n) |
-| `copy` | Sao chép mảng | O(n) |
+| `invoices.txt` | `invoice_id`, `customer_id`, `created_at`, `subtotal`, `vat_amount`, `total` | Lưu đầu hóa đơn, thông tin khách và tổng tiền |
+| `invoice_items.txt` | `invoice_id`, `sku`, `quantity`, `unit_price`, `line_total` | Lưu từng dòng hàng trong hóa đơn |
 
-### 5.2. Danh sách liên kết `LinkedList`
+![Hình 2.3. Minh họa file invoices.txt sau khi tạo dữ liệu demo](report/assets/data_invoices.png)
 
-`LinkedList` là danh sách liên kết đơn, dùng làm bucket trong bảng băm. Mỗi node lưu một cặp khóa-giá trị và con trỏ tới node tiếp theo.
+![Hình 2.4. Minh họa file invoice_items.txt sau khi tạo dữ liệu demo](report/assets/data_invoice_items.png)
 
-Vai trò:
+Chú thích: Hai file hóa đơn thể hiện mô hình master-detail. `invoice_id` liên kết đầu hóa đơn với nhiều dòng chi tiết. Cách tách này giúp lưu được một hóa đơn có nhiều sản phẩm.
 
-- Xử lý va chạm trong bảng băm.
-- Cho phép nhiều khóa cùng rơi vào một bucket.
+### 2.5. Cấu trúc dữ liệu sử dụng
 
-Độ phức tạp:
+#### 2.5.1. Mảng động `DynamicArray`
 
-- Thêm đầu bucket: O(1).
-- Tìm trong bucket: O(k), với k là số phần tử trong bucket.
+`DynamicArray` được tự cài đặt để lưu các danh sách nghiệp vụ: sản phẩm, khách hàng, hóa đơn, chi tiết hóa đơn, kết quả tìm kiếm và kết quả báo cáo. Khi số phần tử vượt sức chứa, mảng tự tăng kích thước.
 
-### 5.3. Bảng băm `HashTable`
+#### 2.5.2. Danh sách liên kết `LinkedList`
 
-`HashTable` được tự cài đặt, không dùng `dict` cho dữ liệu nghiệp vụ. Bảng băm dùng mảng bucket, mỗi bucket là một `LinkedList`.
+`LinkedList` được dùng làm bucket trong bảng băm. Mỗi node lưu một cặp khóa-giá trị và con trỏ tới node tiếp theo. Khi có va chạm khóa trong bảng băm, các phần tử cùng bucket được nối bằng danh sách liên kết.
 
-Vai trò:
+#### 2.5.3. Bảng băm `HashTable`
 
-- Tra cứu sản phẩm theo `sku`.
-- Tra cứu khách hàng theo `customer_id`.
-- Gom nhóm doanh thu theo ngày/tháng.
-- Gom nhóm sản phẩm bán chạy theo mã sản phẩm.
-
-Hàm băm chuỗi:
+`HashTable` dùng để tra cứu nhanh sản phẩm theo `sku`, khách hàng theo `customer_id` và gom nhóm dữ liệu báo cáo. Hàm băm chuỗi được cài đặt theo công thức:
 
 ```text
 hash = (hash * 31 + ASCII(character)) mod capacity
 ```
 
-Độ phức tạp:
+### 2.6. Thuật toán sử dụng
 
-- Trung bình: thêm, xóa, tra cứu O(1).
-- Trường hợp xấu: O(n) nếu nhiều khóa va chạm cùng bucket.
+Các thuật toán chính:
 
-### 5.4. Tìm kiếm tuyến tính
+- Tìm kiếm tuyến tính: dùng khi tìm sản phẩm/khách hàng theo từ khóa gần đúng.
+- Quick sort: dùng khi sắp xếp sản phẩm và top sản phẩm bán chạy.
+- Thuật toán lập hóa đơn: kiểm tra dữ liệu, tính tiền, tạo hóa đơn, trừ tồn kho và lưu file.
 
-Tìm kiếm tuyến tính được dùng khi người dùng nhập từ khóa không chính xác hoàn toàn, ví dụ tìm theo một phần tên sản phẩm hoặc loại sản phẩm.
+Bảng 2.4. Độ phức tạp cấu trúc dữ liệu và thuật toán
 
-Giả mã:
+| Thành phần | Chức năng | Độ phức tạp trung bình |
+| --- | --- | --- |
+| `DynamicArray.append` | Thêm phần tử cuối mảng | O(1) |
+| `DynamicArray.get/set` | Truy cập/cập nhật theo chỉ số | O(1) |
+| `HashTable.get/put` | Tra cứu/thêm theo khóa | O(1) |
+| Tìm kiếm tuyến tính | Tìm theo từ khóa | O(n) |
+| Quick sort | Sắp xếp danh sách | O(n log n) |
+| Lập hóa đơn k dòng | Xử lý một hóa đơn | O(k) |
+
+---
+
+## CHƯƠNG 3. THIẾT KẾ VÀ CÀI ĐẶT CHƯƠNG TRÌNH
+
+### 3.1. Kiến trúc module
+
+Chương trình được chia thành các module:
+
+- `sales_manager/data_structures.py`: cài đặt `DynamicArray`, `LinkedList`, `HashTable`, tìm kiếm và sắp xếp.
+- `sales_manager/models.py`: định nghĩa `Product`, `Customer`, `Invoice`, `InvoiceItem`, `InvoiceLineInput`, `ProductSaleStat`.
+- `sales_manager/storage.py`: đọc/ghi dữ liệu file text.
+- `sales_manager/manager.py`: xử lý nghiệp vụ bán hàng.
+- `sales_manager/cli.py`: giao diện menu console.
+
+Luồng xử lý tổng quát:
 
 ```text
-linear_search(array, predicate):
-    result = DynamicArray()
-    for item in array:
-        if predicate(item):
-            result.append(item)
-    return result
+File text -> Storage -> DynamicArray -> HashTable index -> SalesManager -> CLI -> File text/Báo cáo
 ```
 
-Độ phức tạp: O(n).
+### 3.2. Thiết kế lớp dữ liệu
 
-### 5.5. Quick sort
+Mỗi bản ghi trong file text được ánh xạ thành một lớp dữ liệu. Ví dụ:
 
-Quick sort được dùng để sắp xếp danh sách sản phẩm và thống kê top sản phẩm bán chạy.
+- Dòng trong `products.txt` được chuyển thành `Product`.
+- Dòng trong `customers.txt` được chuyển thành `Customer`.
+- Dòng trong `invoices.txt` được chuyển thành `Invoice`.
+- Dòng trong `invoice_items.txt` được chuyển thành `InvoiceItem`.
 
-Giả mã:
+Mỗi lớp có hàm chuyển đổi từ object sang dòng text và từ dòng text sang object. Cách làm này giúp tách riêng phần lưu trữ và phần xử lý nghiệp vụ.
 
-```text
-quick_sort(array, left, right):
-    if left >= right:
-        return
-    pivot = partition(array, left, right)
-    quick_sort(array, left, pivot - 1)
-    quick_sort(array, pivot + 1, right)
-```
+### 3.3. Chức năng lập hóa đơn
 
-Độ phức tạp:
+Các bước lập hóa đơn:
 
-- Trung bình: O(n log n).
-- Xấu nhất: O(n^2).
-- Không gian phụ do đệ quy: O(log n) trung bình.
-
-### 5.6. Thuật toán lập hóa đơn
+1. Nhập mã khách hàng.
+2. Nhập các dòng sản phẩm gồm mã sản phẩm và số lượng.
+3. Tra cứu khách hàng bằng `HashTable`.
+4. Tra cứu sản phẩm bằng `HashTable`.
+5. Kiểm tra số lượng tồn kho.
+6. Tính tạm tính, chiết khấu, VAT và tổng tiền.
+7. Sinh mã hóa đơn mới.
+8. Ghi đầu hóa đơn và chi tiết hóa đơn.
+9. Giảm tồn kho sản phẩm.
+10. Lưu lại các file dữ liệu.
 
 Giả mã:
 
@@ -396,44 +303,18 @@ create_invoice(customer_id, lines, discount_percent, vat_percent):
     total = subtotal - discount + vat
 
     create invoice
-    for line in lines:
-        create invoice item
-        product.stock -= line.quantity
-
-    save all data files
+    create invoice items
+    decrease product stock
+    save files
 ```
 
-Nếu hóa đơn có k dòng hàng, thời gian xử lý chính là O(k) sau khi bảng băm sản phẩm và khách hàng đã được xây dựng.
+### 3.4. Chức năng báo cáo
 
-## 6. THIẾT KẾ CHƯƠNG TRÌNH
+Báo cáo doanh thu theo ngày/tháng được tạo bằng cách gom nhóm hóa đơn theo chuỗi ngày hoặc tháng. Top sản phẩm bán chạy được tạo bằng cách duyệt toàn bộ chi tiết hóa đơn, cộng dồn số lượng theo `sku`, sau đó sắp xếp giảm dần bằng quick sort.
 
-### 6.1. Kiến trúc module
+### 3.5. Menu chương trình
 
-| Module | Vai trò |
-| --- | --- |
-| `sales_manager/data_structures.py` | Cài đặt `DynamicArray`, `LinkedList`, `HashTable`, tìm kiếm tuyến tính và quick sort. |
-| `sales_manager/models.py` | Định nghĩa các lớp dữ liệu: `Product`, `Customer`, `Invoice`, `InvoiceItem`, `InvoiceLineInput`, `ProductSaleStat`. |
-| `sales_manager/storage.py` | Đọc/ghi dữ liệu từ các file text. |
-| `sales_manager/manager.py` | Xử lý nghiệp vụ: quản lý sản phẩm, khách hàng, lập hóa đơn, báo cáo. |
-| `sales_manager/cli.py` | Giao diện menu console và các lệnh demo/report. |
-| `tests/test_sales_manager.py` | Kiểm thử cấu trúc dữ liệu và nghiệp vụ chính. |
-
-### 6.2. Luồng chạy tổng quát
-
-```text
-File text -> Storage -> DynamicArray -> HashTable index -> SalesManager -> CLI -> File text/Báo cáo
-```
-
-Diễn giải:
-
-1. `Storage` đọc dữ liệu từ file text.
-2. Dữ liệu được đưa vào các `DynamicArray`.
-3. `SalesManager` xây dựng bảng băm cho sản phẩm và khách hàng.
-4. Người dùng thao tác qua menu CLI.
-5. Nghiệp vụ được xử lý trong `SalesManager`.
-6. Sau thao tác thay đổi dữ liệu, chương trình ghi lại file text.
-
-### 6.3. Menu chương trình
+Menu chính:
 
 ```text
 ===== HE THONG QUAN LY BAN HANG =====
@@ -451,227 +332,117 @@ Diễn giải:
 0. Thoat
 ```
 
-Menu chạy trong vòng lặp. Khi người dùng chọn `0`, chương trình lưu dữ liệu và kết thúc.
+---
 
-## 7. CÀI ĐẶT CHỨC NĂNG CHÍNH
+## CHƯƠNG 4. KIỂM THỬ, HƯỚNG DẪN SỬ DỤNG VÀ GITHUB
 
-### 7.1. Quản lý sản phẩm
+### 4.1. Kiểm thử
 
-Chức năng quản lý sản phẩm dùng `DynamicArray` để lưu danh sách và `HashTable` để tra cứu nhanh theo mã sản phẩm.
+Nhóm sử dụng `unittest` để kiểm thử tự động. Các test tập trung vào cấu trúc dữ liệu và nghiệp vụ chính.
 
-Các hàm chính:
-
-- `add_product(product)`.
-- `update_product(product)`.
-- `delete_product(sku)`.
-- `find_products(keyword)`.
-- `sorted_products(field, reverse)`.
-- `low_stock_products()`.
-
-### 7.2. Quản lý khách hàng
-
-Danh sách khách hàng cũng được lưu bằng `DynamicArray`, đồng thời tạo chỉ mục `HashTable` theo `customer_id`.
-
-Các hàm chính:
-
-- `add_customer(customer)`.
-- `update_customer(customer)`.
-- `delete_customer(customer_id)`.
-- `find_customers(keyword)`.
-
-### 7.3. Lập hóa đơn
-
-Chức năng lập hóa đơn là nghiệp vụ quan trọng nhất. Chương trình kiểm tra các ràng buộc trước khi ghi dữ liệu:
-
-- Khách hàng phải tồn tại.
-- Sản phẩm phải tồn tại.
-- Số lượng bán phải lớn hơn 0.
-- Số lượng bán không được vượt tồn kho.
-- Chiết khấu và VAT phải nằm trong khoảng hợp lệ.
-
-Sau khi hợp lệ:
-
-- Chương trình sinh mã hóa đơn mới dạng `HD0001`, `HD0002`, ...
-- Tạo bản ghi `Invoice`.
-- Tạo các bản ghi `InvoiceItem`.
-- Giảm tồn kho sản phẩm.
-- Lưu dữ liệu vào file text.
-
-### 7.4. Báo cáo doanh thu
-
-Báo cáo doanh thu sử dụng `HashTable` để gom nhóm theo ngày hoặc tháng:
-
-- Khóa là chuỗi ngày `YYYY-MM-DD` hoặc tháng `YYYY-MM`.
-- Giá trị là đối tượng `RevenueRow`, lưu số hóa đơn và tổng doanh thu.
-- Sau khi gom nhóm, kết quả được sắp xếp giảm dần theo thời gian.
-
-### 7.5. Top sản phẩm bán chạy
-
-Top sản phẩm bán chạy được tính từ danh sách `InvoiceItem`:
-
-1. Duyệt toàn bộ chi tiết hóa đơn.
-2. Gom nhóm theo `sku` bằng `HashTable`.
-3. Cộng dồn số lượng và doanh thu từng sản phẩm.
-4. Sắp xếp giảm dần theo số lượng bán bằng quick sort.
-5. Lấy tối đa 10 sản phẩm đầu tiên.
-
-## 8. KIỂM THỬ VÀ ĐÁNH GIÁ KẾT QUẢ
-
-### 8.1. Chiến lược kiểm thử
-
-Nhóm sử dụng `unittest` để kiểm thử tự động. Các test tập trung vào hai nhóm:
-
-- Kiểm thử cấu trúc dữ liệu: mảng động, bảng băm, quick sort.
-- Kiểm thử nghiệp vụ: lập hóa đơn, kiểm tra tồn kho, tìm kiếm, sắp xếp, xuất báo cáo.
-
-### 8.2. Bảng test case
+Bảng 4.1. Test case kiểm thử chương trình
 
 | STT | Tình huống | Dữ liệu kiểm thử | Kết quả mong đợi |
 | --- | --- | --- | --- |
-| 1 | Mảng động thêm, xóa, sắp xếp | 3 sản phẩm có giá 300, 100, 200 | Sau quick sort, thứ tự giá tăng dần; xóa đúng phần tử ở giữa. |
-| 2 | Bảng băm thêm/cập nhật/xóa | Khóa `SP001`, `SP002` | Tra cứu đúng; cập nhật không làm tăng kích thước; xóa thành công. |
-| 3 | Lập hóa đơn hợp lệ | KH001 mua SP001 số lượng 2 và SP005 số lượng 1 | Sinh hóa đơn `HD0001`; tồn kho SP001 giảm 2; dữ liệu lưu được. |
-| 4 | Bán vượt tồn kho | SP004 số lượng 999 | Chương trình báo lỗi và không tạo hóa đơn. |
-| 5 | Tìm kiếm, sắp xếp, xuất báo cáo | Từ khóa Laptop, sắp xếp giá giảm dần | Tìm được 2 laptop; SP004 đứng đầu; báo cáo có sản phẩm đã bán. |
+| 1 | Mảng động thêm, xóa, sắp xếp | 3 sản phẩm giá 300, 100, 200 | Sắp xếp đúng, xóa đúng phần tử |
+| 2 | Bảng băm thêm/cập nhật/xóa | Khóa `SP001`, `SP002` | Tra cứu, cập nhật, xóa đúng |
+| 3 | Lập hóa đơn hợp lệ | KH001 mua SP001 và SP005 | Sinh hóa đơn, tồn kho giảm |
+| 4 | Bán vượt tồn kho | SP004 số lượng 999 | Báo lỗi, không tạo hóa đơn |
+| 5 | Tìm kiếm, sắp xếp, xuất báo cáo | Từ khóa Laptop | Kết quả đúng và báo cáo có dữ liệu |
 
-### 8.3. Kết quả chạy test
-
-Lệnh chạy:
+Lệnh kiểm thử:
 
 ```powershell
 python -m unittest discover -s tests
 ```
 
-Kết quả:
+Kết quả hiện tại:
 
 ```text
-.....
-----------------------------------------------------------------------
 Ran 5 tests
-
 OK
 ```
 
-### 8.4. Kết quả demo
+### 4.2. Hướng dẫn sử dụng có minh họa
 
-Lệnh tạo demo:
+#### Bước 1. Mở menu chương trình
 
-```powershell
-python -m sales_manager.cli --data-dir data/demo demo
-```
-
-Kết quả tổng quan:
-
-```text
-Tong quan du lieu
-- San pham: 8
-- Khach hang: 4
-- Hoa don: 3
-- Chi tiet hoa don: 6
-- Doanh thu: 25.770.733 VND
-```
-
-Các file được tạo sau demo:
-
-- `data/demo/products.txt`: sản phẩm sau khi đã giảm tồn kho.
-- `data/demo/invoices.txt`: 3 hóa đơn mẫu.
-- `data/demo/invoice_items.txt`: 6 dòng chi tiết hóa đơn.
-- `output/sales_report.txt`: báo cáo doanh thu và top sản phẩm bán chạy.
-
-### 8.5. Đánh giá
-
-Chương trình đáp ứng các yêu cầu cốt lõi của đề tài. Các nghiệp vụ chính đều có kiểm thử. Thiết kế dữ liệu rõ ràng, dễ kiểm tra bằng mắt thường vì dùng file text. Việc tự cài đặt cấu trúc dữ liệu giúp thể hiện đúng nội dung học phần Cấu trúc dữ liệu và Giải thuật.
-
-Một số giới hạn còn tồn tại:
-
-- Giao diện console chưa thân thiện bằng giao diện đồ họa.
-- Chưa có chức năng nhập kho riêng.
-- Bảng băm chưa tự động mở rộng khi số lượng bản ghi tăng lớn.
-- Chưa có chức năng lọc báo cáo theo khoảng ngày tùy chọn.
-
-## 9. HƯỚNG DẪN CHẠY CHƯƠNG TRÌNH
-
-### 9.1. Yêu cầu môi trường
-
-- Python 3.10 trở lên.
-- Không cần cài thêm thư viện ngoài để chạy chương trình chính.
-
-### 9.2. Chạy menu chính
+Lệnh:
 
 ```powershell
 python -m sales_manager.cli menu
 ```
 
-Hoặc nhấp đúp file:
+![Hình 4.1. Mở menu chương trình](report/assets/step_menu.png)
 
-```text
-run_sales_manager.bat
-```
+Chú thích: Menu hiển thị các chức năng chính. Người dùng nhập số tương ứng để chọn chức năng, nhập `0` để thoát.
 
-### 9.3. Tạo dữ liệu demo
+#### Bước 2. Tạo dữ liệu demo
+
+Lệnh:
 
 ```powershell
 python -m sales_manager.cli --data-dir data/demo demo
 ```
 
-### 9.4. Xem tổng quan dữ liệu
+![Hình 4.2. Tạo dữ liệu demo](report/assets/step_demo.png)
+
+Chú thích: Lệnh này sao chép dữ liệu mẫu, tạo 3 hóa đơn minh họa và xuất báo cáo text.
+
+#### Bước 3. Xem tổng quan dữ liệu
+
+Lệnh:
 
 ```powershell
 python -m sales_manager.cli --data-dir data/demo summary
 ```
 
-### 9.5. Xuất báo cáo text
+![Hình 4.3. Xem tổng quan dữ liệu](report/assets/step_summary.png)
 
-```powershell
-python -m sales_manager.cli --data-dir data/demo report
-```
+Chú thích: Tổng quan cho biết số sản phẩm, số khách hàng, số hóa đơn, số chi tiết hóa đơn và tổng doanh thu.
 
-### 9.6. Chạy kiểm thử
+#### Bước 4. Chạy kiểm thử tự động
+
+Lệnh:
 
 ```powershell
 python -m unittest discover -s tests
 ```
 
-## 10. KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN
+![Hình 4.4. Chạy kiểm thử tự động](report/assets/step_tests.png)
 
-### 10.1. Kết luận
+Chú thích: Bộ kiểm thử giúp kiểm tra nhanh chương trình sau khi thay đổi mã nguồn.
 
-Bài tập đã xây dựng được hệ thống quản lý bán hàng cơ bản bằng Python, có menu console, lưu dữ liệu bằng file text và vận dụng các cấu trúc dữ liệu tự cài đặt. Chương trình đáp ứng các yêu cầu chính: quản lý sản phẩm, quản lý khách hàng, lập hóa đơn master-detail, tính chiết khấu/VAT/tổng tiền, cập nhật tồn kho và thống kê doanh thu.
+### 4.3. Đưa mã nguồn lên GitHub
 
-Về mặt học phần, sản phẩm thể hiện được việc áp dụng mảng động, danh sách liên kết, bảng băm, tìm kiếm tuyến tính và quick sort vào một bài toán quản lý thực tế.
+Repository GitHub: https://github.com/nhtameo/quan-ly-ban-hang-dsa.
 
-### 10.2. Hướng phát triển
+Nội dung đưa lên GitHub chỉ gồm các nhóm file cần thiết:
 
-Các hướng phát triển tiếp theo:
+- Chương trình: thư mục `sales_manager` và các file chạy `.bat`.
+- File dữ liệu: thư mục `data/sample`.
+- Báo cáo: thư mục `report`, gồm báo cáo Word/PDF/Markdown và ảnh minh họa.
+- File hướng dẫn ngắn: `README.md`.
 
-- Bổ sung chức năng nhập kho và nhật ký nhập/xuất.
-- Bổ sung giao diện đồ họa bằng Tkinter.
-- Thêm báo cáo theo khoảng thời gian do người dùng chọn.
-- Cài đặt rehash cho `HashTable` khi hệ số tải tăng cao.
-- Xuất hóa đơn riêng ra PDF.
-- Bổ sung sao lưu và phục hồi dữ liệu.
+Không đưa các file tạm như `tmp`, `output`, `release` lên GitHub. Phần mô tả ngắn của repository được đặt là: `Quản lý bán hàng`.
 
-## 11. PHỤ LỤC MÃ NGUỒN TIÊU BIỂU
+---
 
-### 11.1. Hàm main
+## KẾT LUẬN
 
-File: `sales_manager/cli.py`
+Đề tài đã xây dựng được chương trình quản lý bán hàng cơ bản, đáp ứng các yêu cầu chính của chủ đề: quản lý sản phẩm, quản lý khách hàng, lập hóa đơn master-detail, tính chiết khấu/VAT/tổng tiền, cập nhật tồn kho, thống kê doanh thu và sản phẩm bán chạy. Chương trình sử dụng file text để lưu dữ liệu và tự cài đặt các cấu trúc dữ liệu/thuật toán cần thiết.
 
-```python
-def main() -> None:
-    parser = argparse.ArgumentParser(description="He thong quan ly ban hang DSA")
-    parser.add_argument("--data-dir", default=str(DEFAULT_DATA_DIR), help="Thu muc chua file du lieu text")
-    subparsers = parser.add_subparsers(dest="command")
-    subparsers.add_parser("menu", help="Mo menu console")
-    subparsers.add_parser("summary", help="In tong quan du lieu")
-    subparsers.add_parser("report", help="Xuat bao cao text")
-    subparsers.add_parser("demo", help="Tao du lieu demo va 3 hoa don mau")
-    args = parser.parse_args()
-```
+Qua quá trình thực hiện, nhóm đã củng cố kiến thức về mảng động, danh sách liên kết, bảng băm, tìm kiếm, sắp xếp, xử lý file, kiểm thử và tổ chức chương trình theo module. Hướng phát triển tiếp theo là bổ sung nhập kho, lọc báo cáo theo khoảng thời gian, giao diện đồ họa và xuất hóa đơn riêng ra PDF.
 
-### 11.2. Hàm băm chuỗi
+## TÀI LIỆU THAM KHẢO
 
-File: `sales_manager/data_structures.py`
+1. Tài liệu yêu cầu project 20252 của học phần Cấu trúc dữ liệu và Giải thuật.
+2. Tài liệu Python chuẩn về xử lý file và kiểm thử `unittest`.
+3. Mẫu báo cáo/đồ án tốt nghiệp Đại học Bách khoa Hà Nội.
+
+## PHỤ LỤC
+
+### Phụ lục A. Hàm băm chuỗi
 
 ```python
 def _hash(self, key: str) -> int:
@@ -681,9 +452,7 @@ def _hash(self, key: str) -> int:
     return value
 ```
 
-### 11.3. Ý tưởng hàm lập hóa đơn
-
-File: `sales_manager/manager.py`
+### Phụ lục B. Ý tưởng hàm lập hóa đơn
 
 ```python
 def create_invoice(self, customer_id, lines, discount_percent=0.0, vat_percent=8.0):
@@ -702,8 +471,3 @@ def create_invoice(self, customer_id, lines, discount_percent=0.0, vat_percent=8
     # tru ton kho va luu lai file text.
 ```
 
-## TÀI LIỆU THAM KHẢO
-
-1. Tài liệu yêu cầu project 20252 của học phần Cấu trúc dữ liệu và Giải thuật.
-2. Tài liệu Python chuẩn về xử lý file và kiểm thử `unittest`.
-3. Bài giảng học phần Cấu trúc dữ liệu và Giải thuật.
