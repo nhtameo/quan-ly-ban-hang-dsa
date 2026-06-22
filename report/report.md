@@ -45,30 +45,35 @@ Nhóm 15 xin gửi lời cảm ơn tới giảng viên Vũ Thành Nam đã cung 
 
 4. DANH MỤC BẢNG BIỂU ............................................................ 3
 
-5. CHƯƠNG 1. TỔNG QUAN VÀ PHÂN TÍCH YÊU CẦU ............................. 4
+5. CHƯƠNG 1. TỔNG QUAN VÀ PHÂN TÍCH YÊU CẦU ............................. 5
 
-6. CHƯƠNG 2. THIẾT KẾ DỮ LIỆU VÀ CẤU TRÚC DỮ LIỆU ..................... 6
+6. CHƯƠNG 2. THIẾT KẾ DỮ LIỆU VÀ CẤU TRÚC DỮ LIỆU ..................... 8
 
-7. CHƯƠNG 3. THIẾT KẾ VÀ CÀI ĐẶT CHƯƠNG TRÌNH .......................... 10
+7. CHƯƠNG 3. THIẾT KẾ VÀ CÀI ĐẶT CHƯƠNG TRÌNH .......................... 12
 
-8. CHƯƠNG 4. KIỂM THỬ VÀ HƯỚNG DẪN ...................................... 12
+8. CHƯƠNG 4. KIỂM THỬ VÀ HƯỚNG DẪN ...................................... 15
 
-9. KẾT LUẬN .......................................................................... 15
+9. KẾT LUẬN .......................................................................... 18
 
-10. TÀI LIỆU THAM KHẢO ........................................................... 15
+10. TÀI LIỆU THAM KHẢO ........................................................... 18
 
-11. PHỤ LỤC .......................................................................... 15
+11. PHỤ LỤC .......................................................................... 18
 
 ## DANH MỤC HÌNH VẼ
 
+- Hình 1.1. Sơ đồ tổng quan nghiệp vụ quản lý bán hàng.
 - Hình 2.1. Minh họa file `products.txt`.
 - Hình 2.2. Minh họa file `customers.txt`.
 - Hình 2.3. Minh họa file `invoices.txt` sau khi tạo dữ liệu demo.
 - Hình 2.4. Minh họa file `invoice_items.txt` sau khi tạo dữ liệu demo.
+- Hình 2.5. Minh họa cách sử dụng cấu trúc dữ liệu trong chương trình.
+- Hình 3.1. Sơ đồ kiến trúc module chương trình.
+- Hình 3.2. Luồng xử lý chức năng lập hóa đơn.
 - Hình 4.1. Mở menu chương trình.
 - Hình 4.2. Tạo dữ liệu demo.
 - Hình 4.3. Xem tổng quan dữ liệu.
 - Hình 4.4. Chạy kiểm thử tự động.
+- Hình 4.5. Minh họa repository GitHub.
 
 ## DANH MỤC BẢNG BIỂU
 
@@ -112,6 +117,10 @@ Tỷ lệ đóng góp được chia cân bằng. Mai Phương phụ trách trọ
 
 Trong hoạt động bán hàng, cửa hàng cần quản lý danh mục sản phẩm, thông tin khách hàng, hóa đơn và doanh thu. Nếu quản lý bằng sổ hoặc bảng tính đơn giản, dữ liệu dễ bị sai lệch: tồn kho không cập nhật kịp thời, hóa đơn thiếu chi tiết, doanh thu khó tổng hợp và khó xác định mặt hàng bán chạy. Vì vậy cần một chương trình nhỏ giúp quản lý các nghiệp vụ bán hàng cơ bản.
 
+![Hình 1.1. Sơ đồ tổng quan nghiệp vụ quản lý bán hàng](report/assets/overview_flow.png)
+
+Chú thích: Sơ đồ thể hiện chuỗi nghiệp vụ chính của hệ thống, từ dữ liệu sản phẩm/khách hàng, lập hóa đơn đến cập nhật tồn kho và lập báo cáo doanh thu.
+
 ### 1.4. Mục tiêu
 
 Mục tiêu của đề tài:
@@ -141,7 +150,6 @@ Các chức năng chính:
 - Dữ liệu được lưu lại sau khi thoát chương trình.
 - Mã nguồn tách module rõ ràng.
 - Có dữ liệu mẫu và kiểm thử tự động.
-- Báo cáo trình bày theo bố cục tham khảo mẫu đồ án của Đại học Bách khoa Hà Nội.
 
 ---
 
@@ -226,6 +234,10 @@ Chú thích: Hai file hóa đơn thể hiện mô hình master-detail. `invoice_
 hash = (hash * 31 + ASCII(character)) mod capacity
 ```
 
+![Hình 2.5. Minh họa cách sử dụng cấu trúc dữ liệu trong chương trình](report/assets/data_structures_flow.png)
+
+Chú thích: `DynamicArray` lưu danh sách dữ liệu, `HashTable` tạo chỉ mục tra cứu nhanh, còn `LinkedList` xử lý các phần tử va chạm trong cùng bucket của bảng băm.
+
 ### 2.6. Thuật toán sử dụng
 
 Các thuật toán chính:
@@ -264,6 +276,10 @@ Luồng xử lý tổng quát:
 ```text
 File text -> Storage -> DynamicArray -> HashTable index -> SalesManager -> CLI -> File text/Báo cáo
 ```
+
+![Hình 3.1. Sơ đồ kiến trúc module chương trình](report/assets/module_architecture.png)
+
+Chú thích: Các module được tách theo trách nhiệm: lưu trữ, mô hình dữ liệu, cấu trúc dữ liệu, xử lý nghiệp vụ và giao diện menu.
 
 ### 3.2. Thiết kế lớp dữ liệu
 
@@ -317,6 +333,10 @@ create_invoice(customer_id, lines, discount_percent, vat_percent):
     decrease product stock
     save files
 ```
+
+![Hình 3.2. Luồng xử lý chức năng lập hóa đơn](report/assets/invoice_flow.png)
+
+Chú thích: Luồng lập hóa đơn bắt đầu từ nhập dữ liệu bán hàng, sau đó kiểm tra khách hàng/sản phẩm/tồn kho, tính tiền và lưu đồng thời hai file `invoices.txt`, `invoice_items.txt`.
 
 ### 3.4. Chức năng báo cáo
 
@@ -436,6 +456,10 @@ Nội dung đưa lên GitHub chỉ gồm các nhóm file cần thiết:
 
 Không đưa các file tạm như `tmp`, `output`, `release` lên GitHub. Phần mô tả ngắn của repository được đặt là: `Quản lý bán hàng`.
 
+![Hình 4.5. Minh họa repository GitHub](report/assets/github_repo.png)
+
+Chú thích: Repository chỉ cần phần mô tả ngắn gọn và chứa đúng các nhóm file cần nộp: chương trình, dữ liệu mẫu, báo cáo và hướng dẫn chạy.
+
 ---
 
 ## KẾT LUẬN
@@ -446,9 +470,10 @@ Qua quá trình thực hiện, nhóm đã củng cố kiến thức về mảng 
 
 ## TÀI LIỆU THAM KHẢO
 
-1. Tài liệu yêu cầu project 20252 của học phần Kĩ thuật lập trình.
-2. Tài liệu Python chuẩn về xử lý file và kiểm thử `unittest`.
-3. Mẫu báo cáo/đồ án tốt nghiệp Đại học Bách khoa Hà Nội.
+1. Tài liệu môn học kĩ thuật lập trình, thầy vũ thành nam.
+2. Tài liệu yêu cầu project 20252 của học phần Kĩ thuật lập trình.
+3. Tài liệu Python chuẩn về xử lý file và kiểm thử `unittest`.
+4. Mẫu báo cáo/đồ án tốt nghiệp Đại học Bách khoa Hà Nội.
 
 ## PHỤ LỤC
 
