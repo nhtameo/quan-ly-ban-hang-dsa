@@ -1,13 +1,13 @@
 # TRƯỜNG ĐẠI HỌC BÁCH KHOA HÀ NỘI
-# TRƯỜNG CÔNG NGHỆ THÔNG TIN VÀ TRUYỀN THÔNG
+# KHOA TOÁN - TIN
 
 
 # BÁO CÁO BÀI TẬP LỚN
-## HỌC PHẦN: CẤU TRÚC DỮ LIỆU VÀ GIẢI THUẬT
+## HỌC PHẦN: KĨ THUẬT LẬP TRÌNH
 ## ĐỀ TÀI: HỆ THỐNG QUẢN LÝ BÁN HÀNG
 
 
-Nhóm thực hiện: Nhóm 15
+Sinh viên thực hiện: Nhóm 15
 
 Giảng viên hướng dẫn: Vũ Thành Nam
 
@@ -27,27 +27,37 @@ Hà Nội, tháng 06 năm 2026
 
 ## LỜI CẢM ƠN
 
-Nhóm 15 xin gửi lời cảm ơn tới giảng viên hướng dẫn đã cung cấp danh sách chủ đề, yêu cầu chung và định hướng thực hiện bài tập lớn học phần Cấu trúc dữ liệu và Giải thuật. Trong quá trình thực hiện đề tài, nhóm đã vận dụng kiến thức về mảng động, danh sách liên kết, bảng băm, tìm kiếm, sắp xếp và tổ chức chương trình theo module. Báo cáo này trình bày kết quả xây dựng hệ thống quản lý bán hàng đơn giản, có dữ liệu file text, chương trình chạy được, kiểm thử và hướng dẫn sử dụng.
+Nhóm 15 xin gửi lời cảm ơn tới giảng viên Vũ Thành Nam đã cung cấp danh sách chủ đề, yêu cầu chung và định hướng thực hiện bài tập lớn học phần Kĩ thuật lập trình. Trong quá trình thực hiện đề tài, nhóm đã vận dụng kiến thức về tổ chức chương trình, xử lý file, xây dựng menu, kiểm thử, cấu trúc dữ liệu cơ bản và thuật toán sắp xếp/tìm kiếm. Báo cáo này trình bày kết quả xây dựng hệ thống quản lý bán hàng đơn giản, có dữ liệu file text, chương trình chạy được, kiểm thử và hướng dẫn sử dụng.
 
 ## TÓM TẮT NỘI DUNG
 
-Đề tài xây dựng chương trình quản lý bán hàng bằng Python theo yêu cầu học phần Cấu trúc dữ liệu và Giải thuật. Chương trình hỗ trợ quản lý sản phẩm, quản lý khách hàng, lập hóa đơn bán hàng, tính chiết khấu, thuế VAT, tổng tiền thanh toán, tự động giảm tồn kho sau khi bán và lập báo cáo doanh thu. Dữ liệu được lưu trong các file text có cấu trúc, gồm `products.txt`, `customers.txt`, `invoices.txt` và `invoice_items.txt`. Các cấu trúc dữ liệu như `DynamicArray`, `LinkedList`, `HashTable`, thuật toán tìm kiếm tuyến tính và quick sort được nhóm tự cài đặt để phục vụ nghiệp vụ. Chương trình có menu console, dữ liệu mẫu, ảnh minh họa file dữ liệu, ảnh minh họa từng bước chạy và bộ kiểm thử tự động.
+Đề tài xây dựng chương trình quản lý bán hàng bằng Python theo yêu cầu học phần Kĩ thuật lập trình. Chương trình hỗ trợ quản lý sản phẩm, quản lý khách hàng, lập hóa đơn bán hàng, tính chiết khấu, thuế VAT, tổng tiền thanh toán, tự động giảm tồn kho sau khi bán và lập báo cáo doanh thu. Dữ liệu được lưu trong các file text có cấu trúc, gồm `products.txt`, `customers.txt`, `invoices.txt` và `invoice_items.txt`. Các cấu trúc dữ liệu như `DynamicArray`, `LinkedList`, `HashTable`, thuật toán tìm kiếm tuyến tính và quick sort được nhóm tự cài đặt để phục vụ nghiệp vụ. Chương trình có menu console, dữ liệu mẫu, ảnh minh họa file dữ liệu, ảnh minh họa từng bước chạy và bộ kiểm thử tự động.
 
 ---
 
 ## MỤC LỤC
 
-- Lời cảm ơn.
-- Tóm tắt nội dung.
-- Danh mục hình vẽ.
-- Danh mục bảng biểu.
-- Chương 1. Tổng quan và phân tích yêu cầu.
-- Chương 2. Thiết kế dữ liệu và cấu trúc dữ liệu.
-- Chương 3. Thiết kế và cài đặt chương trình.
-- Chương 4. Kiểm thử, hướng dẫn sử dụng và GitHub.
-- Kết luận.
-- Tài liệu tham khảo.
-- Phụ lục.
+1. LỜI CẢM ƠN ........................................................................ 2
+
+2. TÓM TẮT NỘI DUNG .............................................................. 2
+
+3. DANH MỤC HÌNH VẼ .............................................................. 3
+
+4. DANH MỤC BẢNG BIỂU ............................................................ 3
+
+5. CHƯƠNG 1. TỔNG QUAN VÀ PHÂN TÍCH YÊU CẦU ............................. 4
+
+6. CHƯƠNG 2. THIẾT KẾ DỮ LIỆU VÀ CẤU TRÚC DỮ LIỆU ..................... 6
+
+7. CHƯƠNG 3. THIẾT KẾ VÀ CÀI ĐẶT CHƯƠNG TRÌNH .......................... 10
+
+8. CHƯƠNG 4. KIỂM THỬ VÀ HƯỚNG DẪN ...................................... 12
+
+9. KẾT LUẬN .......................................................................... 15
+
+10. TÀI LIỆU THAM KHẢO ........................................................... 15
+
+11. PHỤ LỤC .......................................................................... 15
 
 ## DANH MỤC HÌNH VẼ
 
@@ -436,7 +446,7 @@ Qua quá trình thực hiện, nhóm đã củng cố kiến thức về mảng 
 
 ## TÀI LIỆU THAM KHẢO
 
-1. Tài liệu yêu cầu project 20252 của học phần Cấu trúc dữ liệu và Giải thuật.
+1. Tài liệu yêu cầu project 20252 của học phần Kĩ thuật lập trình.
 2. Tài liệu Python chuẩn về xử lý file và kiểm thử `unittest`.
 3. Mẫu báo cáo/đồ án tốt nghiệp Đại học Bách khoa Hà Nội.
 
@@ -470,4 +480,3 @@ def create_invoice(self, customer_id, lines, discount_percent=0.0, vat_percent=8
     # Tinh tien, tao hoa don, tao chi tiet hoa don,
     # tru ton kho va luu lai file text.
 ```
-

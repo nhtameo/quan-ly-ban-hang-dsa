@@ -1,6 +1,6 @@
 # Hệ thống quản lý bán hàng
 
-Bài tập lớn môn Cấu trúc dữ liệu và Giải thuật, chủ đề 4: Quản lý bán hàng.
+Bài tập lớn môn Kĩ thuật lập trình, chủ đề 4: Quản lý bán hàng.
 
 Nhóm thực hiện: Nhóm 15
 
